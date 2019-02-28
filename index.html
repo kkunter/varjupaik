@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Varjupaik</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="menu"> 
+	<div class="page">
+		<header>
+			<div class="container">
+				<div class="header__logo"><h1>Varjupaik</h1></div>
+				
+				<label class="menu-btn" for="menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+				<nav>
+					<a href="index.html">
+						<div class="nav__item">
+							Kodu
+						</div>
+					</a>
+					<a href="loomad.html">
+						<div class="nav__item">
+							Loomad varjupaigas
+						</div>
+					</a>
+					<a href="kadunud.html">
+						<div class="nav__item">
+							Kaotatud/leitud
+						</div>
+					</a>
+					<a href="meist.html">
+						<div class="nav__item">
+							Varjupaigast
+						</div>
+					</a>
+					<a href="toeta.html">
+						<div class="nav__item">
+							Toetajad
+						</div>
+					</a>
+					<a href="kontakt.html">
+						<div class="nav__item">
+							Kontakt
+						</div>
+					</a>
+				</nav>
+			</div>
+		</header>
+		<section class="banner">
+			<div class="banner__slide" id="slide1"></div>
+			<div class="banner__slide" id="slide2"></div>
+		</section>
+		<section class="about">
+			<div class="container container--medium grid grid--col2">
+				<div>
+					<h2>VÄLJAKUTSED TARTU LINNAS</h2>
+					<p><b>Telefon:</b> 5333 9272</p>
+					<p><b>E - R</b> 8-20</p>
+					<p><b>L</b> 8-17</p>
+					<h3>Väljaspool nimetatud tööaega saab väljakutseid teha juhul, kui ohus on inimese või looma tervis ja elu, <b>läbi päästeameti hädaabi numbri 112.</b></h3>
+				</div>
+			</div>
+        </section>
+			<section class="about">
+			<div class="container container--medium grid grid--col2">
+				<div>
+					<h2>ASUKOHT</h2>
+					<p>Roosi 91K Põhja-Tartus, Raadi linnaosas.</p>
+					<p><b>NB!</b> Roosi tänavast jääb varjupaik füüsiliselt väga kaugele.</p>
+					<h2>ÜHISTRANSPORT</h2>
+					<p>Buss nr 27 ERMi peatus Muuseumi teel, sealt edasi piki Muuseumi teed ca 700 meetrit viitade järgi.</p>
+					<h2>AUTOGA</h2>
+					<p>Kas piki Muuseumi teed (end. Vahi tänav) või piki Roosi tänavat ja keerata sealt paremale, Muuseumi teele. Viidad on väljas Muuseumi tee / Narva mnt ristis ja Muuseumi teel Roosi tn ristmiku lähedal.</p>
+					<p style="font-size: 15px;"><b>Sisenemiseks helistage</b> tel 5333 9272.</p>
+				</div>
+				<div>
+					<iframe class="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2091.1734584858687!2d26.74410021629142!3d58.39047519298075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb36c0e21d5a79%3A0x3f644e8de0dd4eb5!2sTartu+Loomade+Varjupaik!5e0!3m2!1set!2see!4v1551259814688" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</section>
+		<footer class="section">
+			<div class="container grid grid--col2">
+				<div>
+					<h3>Lingid</h3>
+					<ul class="footer__links">
+						<li><a href="index.html">Kodu</a></li>
+						<li><a href="loomad.html">Loomad varjupaigas</a></li>
+						<li><a href="kadunud.html">Kaotatud/leitud</a></li>
+						<li><a href="meist.html">Varjupaigast</a></li>
+						<li><a href="toeta.html">Toetajad</a></li>
+						<li><a href="kontakt.html">Kontakt</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+    </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>	
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+		$('.toggle-modal').click(function(){
+			$('.modal').removeClass('modal--open');
+			$('.modal[data-modal="' + $(this).attr('data-modal') + '"]').toggleClass('modal--open');
+			$('body').toggleClass('body--modal-open');
+		});
+
+		$('.open-modal').click(function(){
+			$('.modal').removeClass('modal--open');
+			$('.modal[data-modal="' + $(this).attr('data-modal') + '"]').toggleClass('modal--open');
+			$('body').addClass('body--modal-open');
+		});
+
+		$('.modal__background, .close-modal').click(function(){
+			$(this).closest('.modal').removeClass('modal--open');
+			$('body').removeClass('body--modal-open');
+		});
+	});
+</script>
+</body>
+</html>

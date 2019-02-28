@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Varjupaik</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<input type="checkbox" id="menu"> 
+	<div class="page">
+		<header>
+			<div class="container">
+				<div class="header__logo"><h1>Varjupaik</h1></div>
+				
+				<label class="menu-btn" for="menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+				<nav>
+					<a href="index.html">
+						<div class="nav__item">
+							Kodu
+						</div>
+					</a>
+					<a href="loomad.html">
+						<div class="nav__item">
+							Loomad varjupaigas
+						</div>
+					</a>
+					<a href="kadunud.html">
+						<div class="nav__item">
+							Kaotatud/leitud
+						</div>
+					</a>
+					<a href="meist.html">
+						<div class="nav__item">
+							Varjupaigast
+						</div>
+					</a>
+					<a href="toeta.html">
+						<div class="nav__item">
+							Toetajad
+						</div>
+					</a>
+					<a href="kontakt.html">
+						<div class="nav__item">
+							Kontakt
+						</div>
+					</a>
+				</nav>
+			</div>
+		</header>
+		<section class="banner">
+			<div class="banner__slide" id="slide1"></div>
+			<div class="banner__slide" id="slide2"></div>
+		</section>
+		<section class="missing">
+			<div class="container padding--top padding--bottom">
+				<h2 class="title">Kadunud/leitud</h2>
+			</div>
+			<!--<div class="container container--medium justify-content--center display--flex">
+				<div class="card card--wide card--large-thumbnail">
+					<div class="card__inner">
+						<div class="grid grid--col2 ">
+							<div class="card__thumbnail">
+							</div>
+							<div class="card__text display--flex align-items--center justify-content--center">
+								<h3>Kadunud kutsa</h3>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>-->
+			<div class="container padding--bottom padding--top display--flex justify-content--center">
+				<button class="button button--purple button--fill toggle-modal" data-modal="3">Lisa kuulutus</button>
+			</div>
+		</section>
+        <footer class="section">
+			<div class="container grid grid--col2">
+				<div>
+					<h3>Links</h3>
+					<ul class="footer__links">
+						<li><a href="index.html">Kodu</a></li>
+						<li><a href="loomad.html">Loomad varjupaigas</a></li>
+						<li><a href="kadunud.html">Kaotatud/leitud</a></li>
+						<li><a href="meist.html">Varjupaigast</a></li>
+						<li><a href="toeta.html">Toetajad</a></li>
+						<li><a href="kontakt.html">Kontakt</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="modal modal--medium modal--padding" data-modal="3">
+		<label for="modal3" class="modal__background"></label>
+		<div class="modal__window">
+			<div class="modal__header">
+				<button class="modal__close close-modal"></button>
+			</div>
+			<div class="modal__body">
+				<h3 class="title">Kadunud/leitud lemmikloom</h3>
+				<form>
+					<div class="container">
+						<label class="label--select">
+							<span>Kuulutuse tüüp</span>
+							<select>
+								<option>Leitud</option>
+								<option>Kaotatud</option>
+							</select>
+						</label>
+						<label class="label--text">
+							<span>Looma liik</span>
+							<input type="text" name="name" placeholder="Looma liik">
+						</label>
+						<label class="label--text">
+							<span>Kuupäev</span>
+							<input type="text" name="name" placeholder="Kuupäev">
+						</label>
+						<span>Kirjeldus</span>
+						<textarea placeholder="Lühike kirjeldus looma kohta"></textarea>
+
+						<label class="label--text">
+							<span>Lisa pilt</span>
+							<input type="file" name="name">
+						</label>
+					</div>
+
+					<div class="container">
+						<label class="label--text">
+							<span>Teie epost</span>
+							<input type="email" name="name" placeholder="Epost">
+						</label>
+						<label class="label--text">
+							<span>Teie telefon</span>
+							<input type="text" name="name" placeholder="Telefon">
+						</label>
+					</div>
+					
+					<div class="container display--flex justify-content--center">
+						<div class="close-modal button button--border">Tühista</div>
+						<div class="button button--purple button--border button--fill">Saada</div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>	
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.toggle-modal').click(function(){
+			$('.modal').removeClass('modal--open');
+			$('.modal[data-modal="' + $(this).attr('data-modal') + '"]').toggleClass('modal--open');
+			$('body').toggleClass('body--modal-open');
+		});
+
+		$('.open-modal').click(function(){
+			$('.modal').removeClass('modal--open');
+			$('.modal[data-modal="' + $(this).attr('data-modal') + '"]').toggleClass('modal--open');
+			$('body').addClass('body--modal-open');
+		});
+		$('.modal__background, .close-modal').click(function(){
+			$(this).closest('.modal').removeClass('modal--open');
+			$('body').removeClass('body--modal-open');
+		});
+	});
+</script>
+</body>
+</html>
